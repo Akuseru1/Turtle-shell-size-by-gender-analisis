@@ -52,7 +52,25 @@ ggscatter(my_data, x = "Height", y = "Height",
           xlab = "Altura M", ylab = "Altura H")
 #t.test(lenght$estimate[["rho"]])
 
+# Analisis, la covarianza es linear, ya que en todas laas graficas es una linea recta,
 
+# revisamos normalidad
+
+shapiro.test(x$Lenght) # => p = 0.7251
+shapiro.test(x$Width) # => p = 0.8175
+shapiro.test(x$Height) # => p = 0.4581
+
+shapiro.test(y$Lenght) # => p = 0.3459
+shapiro.test(y$Width) # => p = 0.7576
+shapiro.test(y$Height) # => p = 0.5868
+
+# El test de shapiro revisa la normalidad devolviendo valores de p, si todas las parejas 
+# son mayores a 0.05 entonces se puede asumir normalidad
+# estas graficas muestran el area visual de la normal (el gris) y la ubicacion de los
+#datos respecto a la normal
+ggqqplot(my_data$Lenght, ylab = "Lenght")
+ggqqplot(my_data$Width, ylab = "Width")
+ggqqplot(my_data$Height, ylab = "Height")
 
 
 
