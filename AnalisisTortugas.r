@@ -21,13 +21,13 @@ y <- subset(my_data, gender==2)
 # size of samples are n <= 25 so we use t-student to check the hypothesis
 
 
-height <-cor.test(x$Lenght, y$Lenght,  method = "spearman")
-height # to show the data
+lenght <-cor.test(x$Lenght, y$Lenght, alternative = "two.sided", method = "spearman", conf.level = 0.95, exact = FALSE)
+lenght # to show the data
 
-width <-cor.test(x$Width, y$Width,  method = "spearman")
+width <-cor.test(x$Width, y$Width, alternative = "two.sided", method = "spearman", conf.level = 0.95, exact = FALSE)
 width
 
-height <-cor.test(x$Height, y$Height,  method = "spearman")
+height <-cor.test(x$Height, y$Height, alternative = "two.sided", method = "spearman", conf.level = 0.95, exact = FALSE)
 height 
 
 ggscatter(my_data, x = "Lenght", y = "Lenght",
@@ -50,6 +50,9 @@ ggscatter(my_data, x = "Height", y = "Height",
           conf.int = TRUE, 
           cor.coef = TRUE, cor.method = "spearman",
           xlab = "Altura M", ylab = "Altura H")
+#t.test(lenght$estimate[["rho"]])
+
+
 
 
 
