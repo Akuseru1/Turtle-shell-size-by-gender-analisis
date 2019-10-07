@@ -5,12 +5,12 @@ devtools::install_github("kassambara/ggpubr")
 
 #Load the readr library to bring in the dataset
 if(!require(readr)) install.packages("readr")
-devtools::install_github("kassambara/ggpubr")
+
 library(readr) 
 ###################################################
 
 #Load the data set
-my_data= read_csv(file='~/Documents/Projects/Estudio-Tortugas/tortugas.csv', col_names = TRUE)
+my_data= read_csv(file='tortugas.csv', col_names = TRUE)
 
 
 
